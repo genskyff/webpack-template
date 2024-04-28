@@ -1,13 +1,13 @@
 import { useState } from "react";
-import "./App.scss";
+import styles from "./App.scss";
 
 const App = () => {
   const [count, setCount] = useState(0);
-  // console.log("styles:", styles);
+  console.log("styles:", styles);
 
   return (
     <div>
-      <h1>Hello World!</h1>
+      <h1 className={styles.h1}>Hello World!</h1>
       <p>Count: {count}</p>
       <button onClick={() => setCount(count + 1)}>Increment</button>
     </div>

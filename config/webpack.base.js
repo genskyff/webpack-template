@@ -30,7 +30,7 @@ module.exports = {
     extensions: [".js", ".jsx", ".ts", ".tsx", "..."],
   },
   optimization: {
-    runtimeChunk: "true",
+    runtimeChunk: true,
     splitChunks: {
       cacheGroups: {
         vendor: {
