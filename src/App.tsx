@@ -3,6 +3,8 @@ import "./App.scss";
 
 const App = () => {
   const [count, setCount] = useState(0);
+  // console.log("styles:", styles);
+
   return (
     <div>
       <h1>Hello World!</h1>
