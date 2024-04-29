@@ -1,5 +1,5 @@
 declare module "*.scss" {
-  const classes: { [key: string]: string };
+  const classes: any; //{ [key: string]: string };
   export default classes;
 }
 
