@@ -1,3 +1,5 @@
+"use strict";
+
 module.exports = function (api) {
   api.cache(true);
 
@@ -13,7 +15,7 @@ module.exports = function (api) {
     "@babel/preset-react",
     "@babel/preset-typescript",
   ];
-  const plugins = [];
+  const plugins = ["lodash"];
 
   return {
     presets,

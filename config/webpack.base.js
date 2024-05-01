@@ -1,33 +1,32 @@
+"use strict";
+
 const path = require("path");
 const webpack = require("webpack");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
 module.exports = {
-  entry: path.resolve(__dirname, "../src/main.tsx"),
+  entry: { index: path.resolve("./src/index.tsx") },
   output: {
-    path: path.resolve(__dirname, "../dist"),
+    path: path.resolve("./dist"),
+    publicPath: "/",
   },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        include: path.resolve(__dirname, "../src"),
+        test: /\.(js|jsx|ts|tsx)$/,
+        include: path.resolve("./src"),
         use: ["babel-loader"],
       },
       {
-        test: /\.(ts|tsx)$/,
-        include: path.resolve(__dirname, "../src"),
-        use: ["babel-loader", "ts-loader"],
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif|woff|woff2|eot|ttf|otf)$/,
-        include: path.resolve(__dirname, "../src"),
+        test: /\.(bmp|png|svg|jpg|jpeg|gif|woff|woff2|eot|ttf|otf)$/,
+        include: path.resolve("./src"),
         type: "asset",
       },
     ],
   },
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx", "..."],
+    modules: [path.resolve("./src"), "node_modules"],
   },
   optimization: {
     runtimeChunk: true,
@@ -42,7 +41,10 @@ module.exports = {
     },
   },
   plugins: [
-    new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /en/),
+    new webpack.ContextReplacementPlugin(
+      /moment[/\\]locale$/,
+      /ja|zh-cn|zh-tw|en/
+    ),
     new ForkTsCheckerWebpackPlugin(),
   ],
 };

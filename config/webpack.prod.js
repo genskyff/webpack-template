@@ -1,15 +1,17 @@
+"use strict";
+
 const path = require("path");
-const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 module.exports = {
   mode: "production",
   bail: true,
   output: {
-    filename: "[name].[contenthash:8].js",
+    filename: "js/[name].[contenthash:8].js",
     assetModuleFilename: "assets/[name].[contenthash:8][ext][query]",
     clean: true,
   },
@@ -17,7 +19,7 @@ module.exports = {
     rules: [
       {
         test: /\.(css|scss|sass)$/,
-        include: path.resolve(__dirname, "../src"),
+        include: path.resolve("./src"),
         use: [
           MiniCssExtractPlugin.loader,
           {
@@ -60,12 +62,15 @@ module.exports = {
     ],
   },
   plugins: [
-    new BundleAnalyzerPlugin(),
     new HtmlWebpackPlugin({
       title: "Webpack Prod",
-      template: path.resolve(__dirname, "../index.html"),
+      template: path.resolve("./index.html"),
     }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "css/[name].[contenthash:8].css",
+      chunkFilename: "css/[name].[contenthash:8].chunk.css",
+    }),
+    new BundleAnalyzerPlugin(),
   ],
   devtool: "source-map",
 };

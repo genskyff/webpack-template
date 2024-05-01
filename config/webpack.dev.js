@@ -1,17 +1,19 @@
+"use strict";
+
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
   output: {
-    filename: "[name].js",
+    filename: "js/[name].js",
     assetModuleFilename: "assets/[name][ext]",
   },
   module: {
     rules: [
       {
         test: /\.(css|scss|sass)$/,
-        include: path.resolve(__dirname, "../src"),
+        include: path.resolve("./src"),
         use: [
           "style-loader",
           {
@@ -35,7 +37,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: "Webpack Dev",
-      template: path.resolve(__dirname, "../index.html"),
+      template: path.resolve("./index.html"),
     }),
   ],
   devtool: "eval-cheap-module-source-map",
