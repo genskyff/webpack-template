@@ -1,10 +1,9 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
-import styles from "./App.scss";
+import styles from "./App.module.scss";
 
 const App = () => {
   const [count, setCount] = useState(0);
-  console.log("styles:", styles.count);
 
   return (
     <div>
@@ -12,7 +11,7 @@ const App = () => {
       <a href="https://react.dev" target="_blank">
         <img src={reactLogo} alt="React logo" />
       </a>
-      <p className={styles.title}>Count: {count}</p>
+      <p className={styles.count}>Count: {count}</p>
       <button onClick={() => setCount(count + 1)}>Increment</button>
     </div>
   );
