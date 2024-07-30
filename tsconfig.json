@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "allowImportingTsExtensions": true,
+    "allowJs": true,
     "composite": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -16,6 +17,7 @@
     "moduleResolution": "Bundler",
     "noEmit": true,
     "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "resolveJsonModule": true,
@@ -25,6 +27,6 @@
     "useDefineForClassFields": true
   },
   "include": [
-    "src"
+    "src/**/*"
   ]
 }

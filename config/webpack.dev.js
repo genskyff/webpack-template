@@ -15,12 +15,7 @@ module.exports = {
         test: /\.(css|sass|scss)$/,
         include: path.resolve("./src"),
         use: [
-          {
-            loader: "style-loader",
-            options: {
-              esModule: false,
-            },
-          },
+          "style-loader",
           {
             loader: "css-loader",
             options: {
