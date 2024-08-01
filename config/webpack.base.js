@@ -18,7 +18,22 @@ module.exports = {
         use: ["babel-loader"],
       },
       {
-        test: /\.(bmp|gif|jpg|jpeg|png|svg|webp|eot|otf|ttf|woff|woff2)$/,
+        test: /\.(bmp|gif|ico|jpg|jpeg|png|svg|webp)$/,
+        include: path.resolve("./src"),
+        type: "asset",
+      },
+      {
+        test: /\.(aac|flac|m4a|mov|mp3|mp4|ogg|wav|webm)$/,
+        include: path.resolve("./src"),
+        type: "asset",
+      },
+      {
+        test: /\.(eot|otf|ttf|woff|woff2)$/,
+        include: path.resolve("./src"),
+        type: "asset",
+      },
+      {
+        test: /\.(pdf|txt)$/,
         include: path.resolve("./src"),
         type: "asset",
       },
@@ -42,8 +57,8 @@ module.exports = {
   },
   plugins: [
     new webpack.ContextReplacementPlugin(
-      /moment[/\\]locale$/,
-      /ja|zh-cn|zh-tw|en/
+      /moment[\\/]locale$/,
+      /en|ja|zh-cn|zh-tw/
     ),
     new ForkTsCheckerWebpackPlugin(),
   ],

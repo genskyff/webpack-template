@@ -42,6 +42,6 @@ module.exports = {
   ],
   devtool: "eval-cheap-module-source-map",
   devServer: {
-    port: 3000,
+    port: 8000,
   },
 };
