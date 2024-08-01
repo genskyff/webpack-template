@@ -20,7 +20,7 @@ module.exports = function (api) {
     ],
     "@babel/preset-typescript",
   ];
-  const plugins = ["lodash"];
+  const plugins = [];
 
   return {
     presets,
