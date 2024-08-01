@@ -3,7 +3,14 @@
 module.exports = {
   root: true,
   env: { browser: true, es2020: true, node: true },
-  extends: ["eslint:recommended", "plugin:react-hooks/recommended"],
+  extends: [
+    "eslint:recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "prettier",
+  ],
+  parser: "@typescript-eslint/parser",
   plugins: ["react-refresh"],
   rules: {
     "react-refresh/only-export-components": [
@@ -13,9 +20,14 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["*.ts", "*.tsx"],
-      parser: "@typescript-eslint/parser",
-      extends: ["plugin:@typescript-eslint/recommended"],
+      files: ["**/*.js", "**/*.jsx"],
+      parser: "@babel/eslint-parser",
+    },
+    {
+      files: ["*.js", "*.ts"],
+      rules: {
+        "@typescript-eslint/no-require-imports": "off",
+      },
     },
   ],
 };

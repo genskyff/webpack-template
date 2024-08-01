@@ -58,7 +58,7 @@ module.exports = {
   plugins: [
     new webpack.ContextReplacementPlugin(
       /moment[\\/]locale$/,
-      /en|ja|zh-cn|zh-tw/
+      /en|ja|zh-cn|zh-tw/,
     ),
     new ForkTsCheckerWebpackPlugin(),
   ],
