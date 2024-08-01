@@ -28,6 +28,6 @@
     "useDefineForClassFields": true
   },
   "include": [
-    "src/**/*"
+    "src"
   ]
 }
