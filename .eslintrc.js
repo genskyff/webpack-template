@@ -5,11 +5,12 @@ module.exports = {
   env: { browser: true, es2020: true, node: true },
   extends: [
     "eslint:recommended",
-    "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
     "plugin:prettier/recommended",
     "prettier",
   ],
+  ignorePatterns: ["dist"],
   parser: "@typescript-eslint/parser",
   plugins: ["react-refresh"],
   rules: {
