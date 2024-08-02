@@ -21,11 +21,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["**/*.js", "**/*.jsx"],
-      parser: "@babel/eslint-parser",
-    },
-    {
-      files: ["./*.js", "./*.ts", "config/**/*.js", "config/**/*.ts"],
+      files: ["*.js"],
       rules: {
         "@typescript-eslint/no-require-imports": "off",
       },
