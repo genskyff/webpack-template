@@ -25,7 +25,7 @@ module.exports = {
       parser: "@babel/eslint-parser",
     },
     {
-      files: ["*.js", "*.ts"],
+      files: ["./*.js", "./*.ts", "config/**/*.js", "config/**/*.ts"],
       rules: {
         "@typescript-eslint/no-require-imports": "off",
       },
