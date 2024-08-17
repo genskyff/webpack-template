@@ -18,11 +18,11 @@ const presets = [
 
 const plugins = [];
 
-export default function (api) {
+export default (api) => {
   api.cache(true);
 
   return {
     presets,
     plugins,
   };
-}
+};
