@@ -1,13 +1,11 @@
-"use strict";
+import path from "path";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
+import TerserPlugin from "terser-webpack-plugin";
+import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
-const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
-
-module.exports = {
+export default {
   mode: "production",
   bail: true,
   output: {

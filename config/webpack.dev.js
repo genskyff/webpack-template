@@ -1,9 +1,7 @@
-"use strict";
+import path from "path";
+import HtmlWebpackPlugin from "html-webpack-plugin";
 
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-
-module.exports = {
+export default {
   mode: "development",
   output: {
     filename: "js/[name].js",

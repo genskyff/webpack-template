@@ -1,10 +1,8 @@
-"use strict";
+import path from "path";
+import webpack from "webpack";
+import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 
-const path = require("path");
-const webpack = require("webpack");
-const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
-
-module.exports = {
+export default {
   entry: { index: path.resolve("./src/index.tsx") },
   output: {
     path: path.resolve("./dist"),

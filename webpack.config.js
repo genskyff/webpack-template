@@ -1,12 +1,10 @@
-"use strict";
+import { merge } from "webpack-merge";
 
-const { merge } = require("webpack-merge");
+import baseConfig from "./config/webpack.base.js";
+import devConfig from "./config/webpack.dev.js";
+import prodConfig from "./config/webpack.prod.js";
 
-const baseConfig = require("./config/webpack.base");
-const devConfig = require("./config/webpack.dev");
-const prodConfig = require("./config/webpack.prod");
-
-module.exports = (env, args) => {
+export default (env, args) => {
   switch (args.mode) {
     case "development":
       return merge(baseConfig, devConfig);
