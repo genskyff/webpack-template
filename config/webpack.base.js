@@ -11,7 +11,7 @@ export default {
   module: {
     rules: [
       {
-        test: /\.(js|jsx|ts|tsx)$/,
+        test: /\.(ts|tsx)$/,
         include: path.resolve("./src"),
         use: ["babel-loader"],
       },
