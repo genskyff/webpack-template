@@ -1,6 +1,7 @@
 import { useState, useEffect, FC } from "react";
 import { createTodoApi, Todo, UpdateTodoInput } from "./api/todos";
 import reactLogo from "./assets/react.svg";
+import ava from "./assets/ava.jpg";
 import styles from "./App.scss";
 
 const todoApi = createTodoApi();
@@ -56,6 +57,7 @@ const App: FC = () => {
   return (
     <div>
       <img src={reactLogo} alt="React Logo" className={styles.logo} />
+      <img src={ava} alt="Ava Logo" className={styles.logo} />
       <h1>Todo List</h1>
       <form onSubmit={handleCreateTodo}>
         <input
